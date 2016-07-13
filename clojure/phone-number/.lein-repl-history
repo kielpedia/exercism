@@ -1,0 +1,14 @@
+(clojure.string/replace ".(2342-24)" #"[^\d]" "")
+(clojure.string/replace ".(2342-24)" #"[^\d]")
+(clojure.string/replace ".(2 342-24)" #"[^\d]" "")
+ls
+exit
+(and (= (count "12345678912") 11) (not= (.charAt "12345678912" 0) 1))
+(not= (.charAt "12345678912" 0) 1)
+(.charAt "12345678912" 0)
+(not= (.charAt "12345678912" 0) \1)
+exit
+(and (= (count "12345678912") 11) (not= (.charAt "12345678912" 0) \1))
+exit
+(subs "123123" 0 3)
+exit

@@ -1,0 +1,48 @@
+(rand-int 10)
+(take 3 (rand-int 10))
+(repeatedly 3 (rand-int 10))
+(take 3 (repeatedly (rand-int 10)))
+(take 3 (repeatedly #(rand-int 10)))
+(char-array 29)
+(rand-nth "ABCDEFGHI")
+(take 3 (rand-nth "ABCDEFGHI"))
+(take 3 (repeatedly (rand-nth "ABCDEFGHI")))
+(take 3 (repeatedly #(rand-int 10)))
+(take 3 (repeatedly #(rand-nth "ABCDEFGHI")))
+(take 3 #(rand-nth "ABCDEFGHI"))
+lein test
+exit
+(str
+         (take 2 (repeatedly #(rand-nth alphabet)))
+)
+(str (take 2 (repeatedly #(rand-nth alphabet))))
+(str (take 2 (repeatedly #(rand-nth "ABCDEFG"))))
+(str #(take 2 (repeatedly #(rand-nth "ABCDEFG"))))
+(apply str (take 2 (repeatedly #(rand-nth "ABCDEFG"))))
+(clojure.string/join (take 2 (repeatedly #(rand-nth "ABCDEFG"))))
+exit
+(require '(robot-name))
+robot-name/generate-name
+(robot-name/generate-name)
+(require '(src/robot-name))
+(robot-name/generate-name)
+(require '(robot-name/generate-name))
+(generate-name)
+(robot-name/generate-name)
+(load "robot-name)
+(load "robot-name")
+(load "src/robot-name")
+(load "src/robot_name")
+(in-ns 'robot-name)
+(robot-name/generate-name)
+robot-name
+exit
+(load "robot_name")
+(in-ns 'robot-name)
+(generate-name)
+(clojure.string/join (take 2 (repeatedly #(rand-nth "ABCDEFGH"))))
+(clojure.string/join (take 2 (repeatedly #(rand-nth "ABCDEFGH"))) (take 3 (repeatedly #(rand-int 10))))
+(apply str  (take 2 (repeatedly #(rand-nth "ABCDEFGH"))) (take 3 (repeatedly #(rand-int 10))))
+(apply str (take 2 (repeatedly #(rand-nth "ABCDEFGH"))) (take 3 (repeatedly #(rand-int 10))))
+(str (apply str (take 2 (repeatedly #(rand-nth "ABCDEFGH")))) (apply str (take 3 (repeatedly #(rand-int 10)))))
+exit
