@@ -1,5 +1,0 @@
-(get "tests" 0)
-exit
-(map not= "ATBS" "ABCW")
-(->> (map not= "ATBS" "ABCW") (filter identity))
-exit

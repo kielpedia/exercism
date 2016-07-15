@@ -1,19 +1,21 @@
 (ns robot-name)
 
-(def ^:private alphabet "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+(def ^:private alphabet (map char (range (int \A) (int \Z))))
 
-(defn generate-name []
+(defn- generate-uuid []
+       (.toString (java.util.UUID/randomUUID)))
+
+(defn- generate-name []
        (str
          (apply str (take 2 (repeatedly #(rand-nth alphabet))))
          (apply str (take 3 (repeatedly #(rand-int 10))))))
 
 (defn robot []
-      {})
+      (ref {:name (generate-name)}))
 
 (defn robot-name [robot]
-      (if-not (contains? robot :name)
-        (assoc robot :name (generate-name)))
-      (get robot :name))
+      (get @robot :name))
 
 (defn reset-name [robot]
-      (dissoc robot :name))
+      (dosync
+        (ref-set robot (assoc @robot :name (generate-name)))))

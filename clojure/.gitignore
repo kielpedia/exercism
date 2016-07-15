@@ -1,0 +1,5 @@
+*/.lein-*
+
+/.idea/
+/clojure.iml
+**/target/
