@@ -10,7 +10,7 @@ defmodule Sublist do
       cond do
           a === b -> :equal
           sublist?(a,b) -> :sublist
-          superlist?(a,b) -> :superlist
+          sublist?(b,a) -> :superlist
           true -> :unequal
       end
   end
@@ -26,9 +26,5 @@ defmodule Sublist do
             {_, right} = Enum.split(b, start + 1)
             sublist?(a, right)
     end
-  end
-
-  defp superlist?(a,b) do
-    sublist?(b, a)
   end
 end
